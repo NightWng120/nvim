@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/nightwng120/.local/share/nvim/site/pack/packer/start/molokai",
     url = "https://github.com/tomasr/molokai"
   },
+  neoclip = {
+    loaded = true,
+    path = "/home/nightwng120/.local/share/nvim/site/pack/packer/start/neoclip",
+    url = "https://github.com/matveyt/neoclip"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/nightwng120/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -173,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nightwng120/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-tmux-navigator"] = {
+    loaded = true,
+    path = "/home/nightwng120/.local/share/nvim/site/pack/packer/start/vim-tmux-navigator",
+    url = "https://github.com/christoomey/vim-tmux-navigator"
   },
   vimtex = {
     loaded = true,

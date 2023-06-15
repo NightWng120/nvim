@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-jdtls'
   use 'saadparwaiz1/cmp_luasnip'
   use 'rafamadriz/friendly-snippets'
+  use 'matveyt/neoclip'
   use {
   	'christoomey/vim-tmux-navigator',
 	lazy = false
