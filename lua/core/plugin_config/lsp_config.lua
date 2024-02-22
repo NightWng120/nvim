@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "jdtls","quick_lint_js", "rust_analyzer", "pyright"}
+	ensure_installed = { "lua_ls", "clangd", "jdtls","tsserver", "rust_analyzer", "pyright", "asm_lsp", "r_language_server"}
 })
 --(Optional) Configure lua language server for neovim
 
@@ -37,7 +37,7 @@ require("lspconfig").jdtls.setup{
 	on_attach = on_attach,
 	capabilities = capabilities
 }
-require("lspconfig").quick_lint_js.setup{
+require("lspconfig").tsserver.setup{
 	on_attach = on_attach,
 	capabilities = capabilities
 }
@@ -48,6 +48,17 @@ require("lspconfig").rust_analyzer.setup{
 require("lspconfig").pyright.setup{
 	on_attach = on_attach,
 	capabilities = capabilities
+}
+require("lspconfig").r_language_server.setup{
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+require("lspconfig").asm_lsp.setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+    root_dir = function(fname)
+        return vim.loop.cwd()
+    end,
 }
 
 
