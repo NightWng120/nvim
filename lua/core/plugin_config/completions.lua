@@ -6,7 +6,6 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
-
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -71,9 +70,10 @@ cmp.setup({
 
   -- Set source precedence
   sources = cmp.config.sources({
-      { name = 'nvim_lsp' },    -- For nvim-lsp
-      { name = 'luasnip' },     -- For luasnip user
-      { name = 'buffer' },      -- For buffer word completion
-      { name = 'path' },        -- For path completion
+      { name = 'nvim_lsp', keyword_length = 3 },    -- For nvim-lsp
+      { name = 'luasnip', keyword_length = 3 },     -- For luasnip user
+      { name = 'buffer', keyword_length = 3},      -- For buffer word completion
+      { name = 'path'},        -- For path completion
+	  
   })
 })
