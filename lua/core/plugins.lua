@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
 	    requires = {{'nvim-lua/plenary.nvim'}}
 	}
 	use 'lervag/vimtex'
+	use 'tpope/vim-obsession'
 	-- use {
 	--   'VonHeikemen/lsp-zero.nvim',
 	--   branch = 'v2.x',
