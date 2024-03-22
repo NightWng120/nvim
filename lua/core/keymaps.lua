@@ -16,6 +16,7 @@ vim.opt.tabstop = 4
 vim.format_on_save = true
 
 vim.g.mapleader = " "
+vim.keymap.set('n', 'S', ':%s//g<Left><Left>')
 vim.keymap.set('x', '<leader>P', '\"_dP')
 vim.keymap.set('t', '<C-t>', '<C-\\><C-n>:q<CR>')
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {noremap = true})
