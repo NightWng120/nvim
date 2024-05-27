@@ -45,30 +45,6 @@ return require('packer').startup(function(use)
 	}
 	use 'lervag/vimtex'
 	use 'tpope/vim-obsession'
-	-- use {
-	--   'VonHeikemen/lsp-zero.nvim',
-	--   branch = 'v2.x',
-	--   requires = {
-	--     -- LSP Support
-	--     {'neovim/nvim-lspconfig'},             -- Required
-	--     {                                      -- Optional
-	--       'williamboman/mason.nvim',
-	--       run = function()
-	--         pcall(vim.cmd, 'MasonUpdate')
-	--       end,
-	--     },
-	--     {'williamboman/mason-lspconfig.nvim'}, -- Optional
-	--     -- Autocompletion
-	--     {'hrsh7th/nvim-cmp'},     -- Required
-	--     {'hrsh7th/cmp-nvim-lsp'}, -- Required
-	--     {'L3MON4D3/LuaSnip'},     -- Required
-	--   }
-	-- }
-	-- My plugins here
-	-- use 'foo1/bar1.nvim'
-	-- use 'foo2/bar2.nvim'
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
 	if packer_bootstrap then
 	  require('packer').sync()
 	end

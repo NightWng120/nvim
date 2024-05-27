@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "clangd", "jdtls","tsserver", "rust_analyzer", "pyright", "asm_lsp", "r_language_server"}
+	ensure_installed = { "lua_ls", "clangd", "jdtls","tsserver", "rust_analyzer", "pyright", "asm_lsp", "r_language_server", "typos_lsp" }
 })
 --(Optional) Configure lua language server for neovim
 
@@ -29,6 +29,28 @@ require("lspconfig").lua_ls.setup{
 		},
 	}
 }
+
+require('lspconfig').typos_lsp.setup{
+	on_attach = function(client, _)
+		-- Disabled for Markdown, use LaTeX instead
+		local disabled_filetypes = vim.iter({ 'markdown', 'NvimTree' })
+		if disabled_filetypes:find(vim.bo.filetype) ~= nil then
+			-- Force-shutdown seems to be necessary for some reason
+			vim.lsp.stop_client(client.id, true)
+		end
+	end,
+	init_options = {
+		diagnosticSeverity = 'hint',
+		-- Fixes issue where config is ignored when opening a file with
+		-- Telescope from some other directory
+		config = vim.env.HOME .. '/.typos.toml',
+	},
+
+	capabilities = capabilities
+}
+
+-- Enable debug logs for the LSP client. Recommended for debugging only.
+vim.lsp.set_log_level("debug")
 require("lspconfig").clangd.setup{
 	on_attach = on_attach,
 	capabilities = capabilities
